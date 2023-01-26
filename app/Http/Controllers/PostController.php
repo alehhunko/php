@@ -41,4 +41,37 @@ class PostController extends Controller
         }
         echo 'Hi America';
     }
+
+    public function Update()
+    {
+        $post = Post::find(9);
+        $post->update([
+            "title" => "update another some post",
+            "content" => " updateanothersome content",
+            "image" => " update another_imagepost.jpg",
+        ]);
+        dd($post->title);
+    }
+
+    public function Delete()
+    {
+        // $post = Post::find(2);
+        // $post->delete();
+        $post = Post::withTrashed()->find(2);
+        $post->restore();
+        dd('delete');
+    }
+
+    public function firstOrCreate()
+    {
+        $post = Post::find(1);
+        $postAnother = ([
+            "title" => "some filtr post",
+            "content" => "some filtr content",
+            "image" => "filtr some_imagepost.jpg",
+            "likes" => 3000,
+        ]);
+        $filtrPost = Post::firstOrCreate(["title" => "somes post"], $postAnother);
+        dump($filtrPost);
+    }
 }

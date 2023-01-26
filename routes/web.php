@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/posts', 'PostController@Index');
 Route::get('/posts/create', 'PostController@Create');
+Route::get('/posts/update', 'PostController@Update');
+Route::get('/posts/delete', 'PostController@Delete');
+Route::get('/posts/first_or_create', 'PostController@firstOrCreate');

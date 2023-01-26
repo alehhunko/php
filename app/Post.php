@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    protected $table='posts';
-    protected $guarded=[];
+    use SoftDeletes;
+
+    protected $table = 'posts';
+    protected $guarded = [];
 }
