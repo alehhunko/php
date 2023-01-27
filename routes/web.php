@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', 'PostController@Index');
+Route::get('/about', 'AboutController@Index')->name('about.index');
+Route::get('/contacts', 'ContactsController@Index')->name('contact.index');
+Route::get('/main', 'MainController@Index')->name('main.index');
+Route::get('/posts', 'PostController@Index')->name('post.index');
 Route::get('/posts/create', 'PostController@Create');
 Route::get('/posts/update', 'PostController@Update');
 Route::get('/posts/delete', 'PostController@Delete');

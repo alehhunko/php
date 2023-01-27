@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
-class MyPlaceController extends Controller
+class AboutController extends Controller
 {
     public function Index()
     {
-        return 'This ia my page Contoller';
+        return view('about');
     }
 }
