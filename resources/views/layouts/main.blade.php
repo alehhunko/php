@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 
-<body class="conteiner">
+<body class="container">
+    <div class="row">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -26,7 +27,7 @@
             </div>
         </div>
     </nav>
-
+    </div>
     @yield('contents')
 </body>
 
