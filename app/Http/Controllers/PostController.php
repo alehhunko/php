@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Redirect;
@@ -10,8 +11,10 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        return view('post/index', compact('posts'));
+        $categories=Post::find(3);
+        dd($categories->Category);
+        // $posts = Post::all();
+        // return view('post/index', compact('posts'));
     }
 
     public function create()
