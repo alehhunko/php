@@ -40,7 +40,7 @@ class PostController extends Controller
         $tagss = $data['tags'];
         unset($data['tags']);
         $post = Post::create($data);
-
+        dd($post);
         // foreach ($tags as $item) {
         //     PostTag::firstOrCreate([
         //         'tag_id' => $item,
