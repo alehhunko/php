@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
+use App\PostTag;
 use App\Tag;
 use Illuminate\Support\Facades\Redirect;
 
@@ -36,10 +37,18 @@ class PostController extends Controller
             'category_id' => '',
             'tags' => '',
         ]);
-        $tags = $data['tags'];
-        unset($tags);
-        dd($tags, $data);
-        Post::create($data);
+        $tagss = $data['tags'];
+        unset($data['tags']);
+        $post = Post::create($data);
+
+        // foreach ($tags as $item) {
+        //     PostTag::firstOrCreate([
+        //         'tag_id' => $item,
+        //         'post_id' => $post->id,
+        //     ]);
+        // }
+
+        $post->tags()->attach($tagss);
         return redirect()->route('post.index');
     }
 
