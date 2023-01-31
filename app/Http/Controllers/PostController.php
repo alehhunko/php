@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Tag;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $categories=Post::find(3);
-        dd($categories->Category);
+        $post=Post::find(1);
+        $tag=Tag::find(1);
+        dump($tag->title);
+        dd($tag->posts);
         // $posts = Post::all();
         // return view('post/index', compact('posts'));
     }
