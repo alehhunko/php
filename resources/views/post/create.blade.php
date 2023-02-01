@@ -13,8 +13,8 @@
     </div>
     <div class="form-group">
         <label for="content">Content</label>
-        <textarea class="form-control" name="post_content" id="content" placeholder="Enter Content"
-            value="{{ old('post_content') }}"></textarea>
+        <textarea class="form-control" name="post_content" id="content"
+            placeholder="Enter Content">{{ old('post_content') }}</textarea>
         @error('post_content')
         <p class="text-danger">{{$message}}</p>
         @enderror
