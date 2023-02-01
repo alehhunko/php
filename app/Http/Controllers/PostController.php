@@ -31,7 +31,7 @@ class PostController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
+            'title' => 'required|string',
             'post_content' => 'string',
             'image' => 'string',
             'category_id' => '',
