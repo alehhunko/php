@@ -10,7 +10,7 @@ class Post extends Model
     use SoftDeletes;
 
     protected $table = 'posts';
-    protected $guarded = [];
+    protected $guarded = false;
 
     public function category()
     {

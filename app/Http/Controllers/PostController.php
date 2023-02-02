@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
+    public function __invoke()
+    {
+        
+    }
     public function index()
     {
         // $post=Post::find(1);
