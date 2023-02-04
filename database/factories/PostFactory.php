@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Category;
 use App\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
 {
-    protected $model=Post::class;
+    protected $model = Post::class;
     /**
      * Define the model's default state.
      *
@@ -16,8 +17,12 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>'dfdfdf',
-            'surname'=>'dfdfdfette'
+            'title' => $this->faker->name,
+            'post_content' => $this->faker->text,
+            'image' => $this->faker->imageUrl(),
+            'likes' => random_int(1, 2000),
+            'is_published' => 1,
+            'category_id' => Category::get()->random()->id,
         ];
     }
 }
