@@ -15,7 +15,7 @@ class IndexController extends Controller
         // $tag=Tag::find(1);
         // dump($tag->title);
         // dd($tag->posts);
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         return view('post/index', compact('posts'));
     }
 }
