@@ -9,7 +9,7 @@
 </div>
 @endforeach
 <div class="mt-3">
-    {{$posts->links()}}
+    {{$posts->withQueryString()->links()}}
 </div>
 <form action="{{route('post.index')}}" method="CET">
     @csrf
