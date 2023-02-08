@@ -1,4 +1,4 @@
 @extends('layouts/admin')
-@section('contents')
-    this is page about
+@section('content')
+    this is page contacts
 @endsection
