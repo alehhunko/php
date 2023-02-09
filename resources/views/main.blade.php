@@ -1161,6 +1161,7 @@
               <!-- /.card-body -->
               <div class="card-footer">
                 <form action="#" method="post">
+                  @csrf
                   <div class="input-group">
                     <input type="text" name="message" placeholder="Type Message ..." class="form-control">
                     <span class="input-group-append">
